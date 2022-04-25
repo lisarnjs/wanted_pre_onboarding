@@ -37,19 +37,14 @@ const Li = styled.li`
 
 export default function Tab() {
   const [toggle, setToggle] = useState(0);
+  const tabArr = ["짜장면", "짬뽕", "군만두"];
   
   return(
     <TabContainer>
       <Ul>
-        <Li textColor={toggle===0} onClick={() => setToggle(0)}>
-          <span>짜장면</span>
-        </Li>
-        <Li textColor={toggle===1} onClick={() => setToggle(1)}>
-          <span>짬뽕</span>
-        </Li>
-        <Li textColor={toggle===2} onClick={() => setToggle(2)}>
-          <span>군만두</span>
-        </Li>
+        {tabArr.map((item, index) => (
+          <Li key={index} textColor={toggle===index} onClick={() => setToggle(index)}>{item}</Li>
+        ))}
       </Ul>
       <SlideBar left={toggle}></SlideBar>
     </TabContainer>
