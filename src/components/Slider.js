@@ -81,8 +81,8 @@ export default function Slider() {
         max="100"   
         />
         <Ul>
-          {ranges.map((range) => 
-          <li onClick={() => setSliderValue(range)}>
+          {ranges.map((range, index) => 
+          <li key={index} onClick={() => setSliderValue(range)}>
             <span>{range}%</span>
           </li>)}
         </Ul>
